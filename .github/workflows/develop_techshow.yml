@@ -1,0 +1,35 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+name: Build and deploy container app to Azure Web App - techshow
+
+on:
+  push:
+    branches:
+      - develop
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: 'ubuntu-latest'
+
+    steps:
+    - uses: actions/checkout@master
+
+    - uses: azure/docker-login@v1
+      with:
+        login-server: https://kherincontainerregistry.azurecr.io/
+        username: ${{ secrets.AzureAppService_ContainerUsername_d48c36f4ff08470db766b173c0cc098f }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_d862805ca2424bc58c8cdbf4403d37cc }}
+
+    - run: |
+        docker build . -t kherincontainerregistry.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_d48c36f4ff08470db766b173c0cc098f }}/web/techshow:${{ github.sha }}
+        docker push kherincontainerregistry.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_d48c36f4ff08470db766b173c0cc098f }}/web/techshow:${{ github.sha }}
+
+    - name: Deploy to Azure Web App
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'techshow'
+        slot-name: 'production'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_5bb2d90f04f74c949f5e64fcc61a0b69 }}
+        images: 'kherincontainerregistry.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_d48c36f4ff08470db766b173c0cc098f }}/web/techshow:${{ github.sha }}'
