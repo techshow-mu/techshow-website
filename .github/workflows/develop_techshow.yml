@@ -18,18 +18,18 @@ jobs:
 
     - uses: azure/docker-login@v1
       with:
-        login-server: https://kherincontainerregistry.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_d48c36f4ff08470db766b173c0cc098f }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_d862805ca2424bc58c8cdbf4403d37cc }}
+        login-server: https://techshow.azurecr.io/
+        username: ${{ secrets.AzureAppService_ContainerUsername_1dc0d7f719864586bf5ab6073fbb110e }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_46dfbb0d788f493a91fba05b465888e7 }}
 
     - run: |
-        docker build . -t kherincontainerregistry.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_d48c36f4ff08470db766b173c0cc098f }}/web/techshow:${{ github.sha }}
-        docker push kherincontainerregistry.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_d48c36f4ff08470db766b173c0cc098f }}/web/techshow:${{ github.sha }}
+        docker build . -t techshow.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1dc0d7f719864586bf5ab6073fbb110e }}/web/techshow:${{ github.sha }}
+        docker push techshow.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1dc0d7f719864586bf5ab6073fbb110e }}/web/techshow:${{ github.sha }}
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'techshow'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_5bb2d90f04f74c949f5e64fcc61a0b69 }}
-        images: 'kherincontainerregistry.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_d48c36f4ff08470db766b173c0cc098f }}/web/techshow:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_63af38cb9a064f71b4c39f59a89b0187 }}
+        images: 'techshow.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1dc0d7f719864586bf5ab6073fbb110e }}/web/techshow:${{ github.sha }}'
