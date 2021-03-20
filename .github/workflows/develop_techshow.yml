@@ -23,7 +23,7 @@ jobs:
         password: ${{ secrets.AzureAppService_ContainerPassword_46dfbb0d788f493a91fba05b465888e7 }}
 
     - run: |
-        docker build -f dockerfile.production -t techshow.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1dc0d7f719864586bf5ab6073fbb110e }}/web/techshow:${{ github.sha }}
+        docker build -t techshow.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1dc0d7f719864586bf5ab6073fbb110e }}/web/techshow:${{ github.sha }} -f dockerfile.production .
         docker push techshow.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_1dc0d7f719864586bf5ab6073fbb110e }}/web/techshow:${{ github.sha }}
 
     - name: Deploy to Azure Web App
