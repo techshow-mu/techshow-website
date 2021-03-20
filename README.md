@@ -25,3 +25,29 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Docker Support
+Building the image:
+```
+$ docker build -t techshow:dev .
+```
+
+Starting a container:
+```
+$ docker run -d -v ${PWD}:/app -v /app/node_modules -p 4201:4200 --name techshow --rm techshow:dev
+```
+
+Executing commands inside the container:
+```
+$ docker exec -it techshow [COMMAND]
+$ docker exec -it techshow ng test --watch=false
+```
+NOTE: 
+```
+$ docker exec -it foo ng e2e --port 4202  # DOES NOT WORK YET!!
+```
+
+Stopping the container:
+```
+$ docker container stop techshow
+```
