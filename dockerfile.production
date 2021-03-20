@@ -1,19 +1,13 @@
-# Stage 1
-FROM node:10-alpine as build-step
+FROM node:14.1-alpine AS builder
 
-RUN mkdir -p /app
-
-WORKDIR /app
-
-COPY package.json /app
-
+WORKDIR /opt/web
+COPY package.json package-lock.json ./
 RUN npm install
 
-COPY . /app
+ENV PATH="./node_modules/.bin:$PATH"
 
-RUN npm run build --prod
+COPY . ./
+RUN ng build --prod
 
-# Stage 2
-FROM nginx:1.17.1-alpine
-
-COPY --from=build-step /app/docs /usr/share/nginx/html
+FROM nginx:1.17-alpine
+COPY --from=builder /opt/web/dist/techshow-website /usr/share/nginx/html
