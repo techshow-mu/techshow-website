@@ -6,9 +6,10 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "ci:test": "ng test --watch=false",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "ci:build": "ng build --prod",
+    "ci:test": "ng test --watch=false"
   },
   "private": true,
   "dependencies": {
