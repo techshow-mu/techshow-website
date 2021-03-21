@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "ci:build": "ng build --prod --output-path docs",
+    "ci:build": "ng build --prod --output-path docs --base-href /techshow-website/",
     "ci:test": "ng test --watch=false"
   },
   "private": true,
