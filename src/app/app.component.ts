@@ -13,7 +13,7 @@ import { Component } from '@angular/core';
     <app-footer></app-footer>
   `
     ,
-    styles: []
+    styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'techshow-website';

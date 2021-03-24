@@ -5,10 +5,15 @@ import { Component, OnInit } from '@angular/core';
   template: `
   <p>
     home works!
+    
+    <button class="button">click</button><br><br>
+    <button class="button">click</button><br><br>
+    <button class="button">click</button><br><br>
+    <button class="button">click</button><br>
   </p>
   `
     ,
-    styles: []
+    styleUrls: ['../app.component.scss']
 })
 export class HomeComponent implements OnInit {
 
