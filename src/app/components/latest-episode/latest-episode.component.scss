@@ -1,0 +1,143 @@
+$primary-yellow: #ffcc31;
+$background-gray: #f7f7f7;
+$accent-red: #c55e67;
+$accent-green: #27c93f;
+
+$color_white: #fff;
+$color_grey: #e2e2e2;
+$color_grey_dark: #a2a2a2;
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto;
+  box-shadow: 0 3px 7px -1px rgba(#000, 0.1);
+  margin-bottom: 1.6%;
+  background: $background-gray;
+  line-height: 1.4;
+  font-family: serif;
+  min-height: 300px;
+  overflow: hidden;
+  z-index: 0;
+
+  &:hover {
+    .photo {
+      transform: scale(1.3) rotate(3deg);
+    }
+  }
+
+  .meta {
+    position: relative;
+    z-index: 0;
+    height: 200px;
+  }
+
+  .photo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.2s;
+  }
+
+  .description {
+    padding: 1rem;
+    background: $background-gray;
+    position: relative;
+    z-index: 1;
+
+    h1,
+    h2 {
+      font-family: serif;
+    }
+
+    h1 {
+      line-height: 1;
+      margin: 0.7rem 0 1.4rem 0;
+      font-size: 1.7rem;
+      font-weight: 700;
+      position: relative;
+      display: block;
+
+      &:after {
+        content: "";
+        position: absolute;
+        height: 5px;
+        background: $primary-yellow;
+        width: 50px;
+        bottom: -10px;
+        left: 0;
+      }
+    }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 300;
+      font-size: 18px;
+      color: $color_grey_dark;
+      margin: 1.4em 0;
+      color: $accent-red;
+      span {
+        color: $accent-green;
+      }
+    }
+
+    p {
+      position: relative;
+      text-align: justify;
+      margin: 1rem 0 3em;
+    }
+
+    .button {
+      background-color: $primary-yellow;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin-bottom: 1rem;
+      margin-left: 1rem;
+      color: $accent-red;
+    }
+  }
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+
+    .meta {
+      flex-basis: 40%;
+      height: auto;
+    }
+
+    .description {
+      flex-basis: 60%;
+      &:before {
+        transform: skewX(-3deg);
+        content: "";
+        background: $background-gray;
+        width: 30px;
+        position: absolute;
+        left: -10px;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+      }
+    }
+    
+    &.alt {
+      flex-direction: row-reverse;
+      .description {
+        &:before {
+          left: inherit;
+          right: -10px;
+          transform: skew(3deg);
+        }
+      }
+    }
+  }
+}
