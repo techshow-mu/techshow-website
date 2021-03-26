@@ -22,4 +22,8 @@ describe('HeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it(`should have as title 'The TechShow WebSite'`, () => {
+    expect(component.title).toEqual('The TechShow WebSite');
+  });
 });
