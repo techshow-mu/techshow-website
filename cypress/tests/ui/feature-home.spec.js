@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe('Feature: Loading Application', () => {
+describe('Feature: Home Page', () => {
   beforeEach(() => {
     cy.visit("/");
   });
