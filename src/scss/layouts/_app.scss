@@ -1,0 +1,19 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  width: 100%;
+  min-height: 100vh;
+
+  &__header {
+    width: 100%;
+    position: fixed;
+    min-height: 3.5rem;
+  }
+
+  &__content {
+    flex: 1;
+    padding-top: 3.5rem;
+  }
+}
