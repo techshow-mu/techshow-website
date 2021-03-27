@@ -1,10 +1,46 @@
-# TechshowWebsite
+# TechShow Website
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
 
-## Development server
+## Summary
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This is the website behind [TechShow Mauritius Podcast](https://techshow-mu.github.io/techshow-website/). It is a single-page application built with Angular.
+
+## How can I contribute ?
+
+---
+
+### Docker Support
+
+Building the image:
+
+```
+$ docker build -t techshow:dev .
+```
+
+Starting a container:
+
+```
+$ docker run -d -v ${PWD}:/app -v /app/node_modules -p 4201:4200 --name techshow --rm techshow:dev
+```
+
+Executing commands inside the container:
+
+```
+$ docker exec -it techshow [COMMAND]
+$ docker exec -it techshow ng test --watch=false
+```
+
+NOTE:
+
+```
+$ docker exec -it foo ng e2e --port 4202  # DOES NOT WORK YET!!
+```
+
+Stopping the container:
+
+```
+$ docker container stop techshow
 
 ## Code scaffolding
 
@@ -26,28 +62,5 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-## Docker Support
-Building the image:
-```
-$ docker build -t techshow:dev .
-```
 
-Starting a container:
-```
-$ docker run -d -v ${PWD}:/app -v /app/node_modules -p 4201:4200 --name techshow --rm techshow:dev
-```
-
-Executing commands inside the container:
-```
-$ docker exec -it techshow [COMMAND]
-$ docker exec -it techshow ng test --watch=false
-```
-NOTE: 
-```
-$ docker exec -it foo ng e2e --port 4202  # DOES NOT WORK YET!!
-```
-
-Stopping the container:
-```
-$ docker container stop techshow
 ```
