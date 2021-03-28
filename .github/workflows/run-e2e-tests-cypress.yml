@@ -1,4 +1,4 @@
-name: Run e2e Tests
+name: Run e2e Tests with Cypress
 
 on:
   pull_request:
