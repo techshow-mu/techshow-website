@@ -1,15 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-guests',
-  templateUrl: './guests.component.html',
-  styleUrls: ['./guests.component.scss']
+  templateUrl: './guests.component.html'
 })
-export class GuestsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class GuestsComponent {}
