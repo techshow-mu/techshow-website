@@ -19,7 +19,13 @@
                 class="col-2 nav-link"
                 *ngFor="let navigationLink of navigationLinks"
               >
-                <span> {{ navigationLink }} </span>
+                <span
+                  class="no-outline"
+                  [routerLink]="navigationLink.path"
+                  routerLinkActive="active-route"
+                >
+                  {{ navigationLink.linkTitle }}
+                </span>
               </div>
             </div>
           </div>

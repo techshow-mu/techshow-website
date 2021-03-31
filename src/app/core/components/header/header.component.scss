@@ -38,3 +38,15 @@
   display: flex;
   align-items: center;
 }
+
+.nav-link span {
+  cursor: pointer;
+
+  &:hover {
+    border-bottom: 2px solid #ffc107;
+  }
+}
+
+.active-route {
+  border-bottom: 2px solid #ffc107;
+}

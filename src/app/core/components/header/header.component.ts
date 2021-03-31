@@ -6,9 +6,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   navbar_logo_src: string;
-  navigationLinks = ['home', 'podcasts', 'calendar', 'contact_us', 'guests', 'subscribe'];
+  navigationLinks = [
+    {
+      name: 'HomePage',
+      linkTitle: 'home',
+      path: ['home']
+    },
+    {
+      name: 'PodcastsPage',
+      linkTitle: 'podcasts',
+      path: ['podcasts']
+    },
+    {
+      name: 'GuestsPage',
+      linkTitle: 'guests',
+      path: ['guests']
+    },
+    {
+      name: 'CalendarPage',
+      linkTitle: 'calendar',
+      path: ['calendar']
+    }
+  ];
 
-  constructor() { }
+  constructor(
+  ) { }
 
   ngOnInit(): void {
   }
