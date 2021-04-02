@@ -1,0 +1,13 @@
+<!-- inspiration: https://codemyui.com/blog-card-image-left-right/ -->
+<div class="blog-card alt">
+    <div class="meta">
+        <div class="photo" style="background-image: url('{{ episode.image}}')"></div>
+    </div>
+    <div class="description">
+        <h1 class="title">{{ episode.title }}</h1>
+        <h2 class="subtitle">echo <span>"Episode #{{ episode.number }}"</span></h2>
+        <p>{{ episode.description }}</p>
+        <!-- TODO: make use of button component -->
+        <button class="button" (click)="redirect()">Read More</button>
+    </div>
+</div>

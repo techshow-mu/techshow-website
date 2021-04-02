@@ -1,0 +1,25 @@
+<header class="app__header">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink="/" data-cy="txt-title">{{ title }}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active" data-cy="lnk-home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/podcasts" routerLinkActive="active" data-cy="lnk-podcasts">Podcasts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/guests" routerLinkActive="active" data-cy="lnk-guests">Guests</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/latest-episode" routerLinkActive="active" data-cy="lnk-latest-episode">Latest Episode</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

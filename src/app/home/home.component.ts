@@ -3,18 +3,10 @@ import { ButtonComponent } from '../button/button.component';
 
 @Component({
   selector: 'app-home',
-  template: `
-  <p>
-    home works!
-    <app-button textcolor="green" text="This is a property-passsed text"></app-button><br>
-    <app-button bgcolor="green" text="a"></app-button><br>
-    <app-button borderradius="5px" text="b"></app-button><br>
-    <app-button text="wwrtrewt"></app-button><br>
-    <app-button text="wrtrewtrwt"></app-button><br>
-  </p>
-  `
-    ,
-    styleUrls: ['../app.component.scss']
+
+  templateUrl: './home.component.html',
+  styles: []
+
 })
 export class HomeComponent implements OnInit {
 
