@@ -7,9 +7,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HomeComponent } from './home/home.component';
+import { ButtonComponent } from './button/button.component';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    ButtonComponent,
+
   ],
   imports: [
     BrowserModule,
