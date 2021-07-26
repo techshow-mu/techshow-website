@@ -1,25 +1,38 @@
-<header class="app__header">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" routerLink="/" data-cy="txt-title">{{ title }}</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/" routerLinkActive="active" data-cy="lnk-home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/podcasts" routerLinkActive="active" data-cy="lnk-podcasts">Podcasts</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/guests" routerLinkActive="active" data-cy="lnk-guests">Guests</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/latest-episode" routerLinkActive="active" data-cy="lnk-latest-episode">Latest Episode</a>
-        </li>
-      </ul>
+<div class="nav-bar mb-5">
+  <img
+    class="nav-bar-logo m-0 p-0"
+    src="assets/logo/png/374x281.png"
+    width="70%"
+    height="auto"
+    alt="techshow_logo"
+  />
+  <div class="nav-bar-body">
+    <div class="row nav-bar-links">
+      <div class="col-12 h-100 w-100">
+        <div class="row h-100 w-100">
+          <div
+            class="col-xs-1 offset-xs-1 col-sm-1 offset-sm-1 offset-sm-0 col-md-2 offset-md-2 col-lg-2 offset-lg-2 col-xl-2 offset-xl-2"
+          ></div>
+          <div class="col-xs-10 col-sm-10 col-md-8 col-lg-8 col-xl-8">
+            <div class="d-flex flex-row h-100">
+              <div
+                class="col-2 nav-link"
+                *ngFor="let navigationLink of navigationLinks"
+              >
+                <div class="row">
+                  <span
+                    class="col no-outline no-padding"
+                    [routerLink]="navigationLink.path"
+                    routerLinkActive="active-route"
+                  >
+                    {{ navigationLink.linkTitle }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </nav>
-</header>
+  </div>
+</div>

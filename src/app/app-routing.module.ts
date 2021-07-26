@@ -4,8 +4,10 @@ import { PageNotFoundComponent } from './core/components/page-not-found/page-not
 
 const routes: Routes = [
   { path: '', loadChildren: () => import('./features/home/home.module').then(m => m.HomeModule) },
+  { path: 'home', loadChildren: () => import('./features/home/home.module').then(m => m.HomeModule) },
   { path: 'podcasts', loadChildren: () => import('./features/podcasts/podcasts.module').then(m => m.PodcastsModule) },
   { path: 'guests', loadChildren: () => import('./features/guests/guests.module').then(m => m.GuestsModule) },
+  { path: 'calendar', loadChildren: () => import('./features/calendar/calendar.module').then(m => m.CalendarModule) },
   { path: 'latest-episode', loadChildren: () => import('./features/latest-episode/latest-episode.module').then(m => m.LatestEpisodeModule) },
   { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
