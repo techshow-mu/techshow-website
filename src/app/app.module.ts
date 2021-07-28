@@ -6,9 +6,8 @@ import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
-import { ButtonComponent } from './button/button.component';
+import { ButtonComponent } from '@shared/components/button/button.component';
 
 
 @NgModule({
